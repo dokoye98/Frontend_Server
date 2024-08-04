@@ -13,7 +13,7 @@ function Compiler() {
         const fetchCompiledIds = async () => {
             try {
                 
-                const response = await axios.get("http://localhost:3001/compiler/compiled-ids")
+                const response = await axios.get("http://34.16.32.35/compiler/compiled-ids")
                 setCompiledIds(response.data.compiledIds)
             } catch (error) {
                 console.error("Error fetching compiled IDs:", error)
@@ -27,7 +27,7 @@ function Compiler() {
         e.preventDefault()
         setError('')
         try {
-            const response = await axios.post("http://localhost:3001/compiler/compile", { input: msg })
+            const response = await axios.post("http://34.16.32.35/compiler/compile", { input: msg })
             navigate(`/output/${response.data.outputId}`)
         } catch (error) {
             setError('Failed to compile. Please try again.')
